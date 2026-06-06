@@ -1,0 +1,612 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-height: 100px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.navbar img {
+    height: 40px;
+    object-fit: contain;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Main Section */
+.main-container {
+    padding-top: 110px; /* Adjust the padding to prevent overlap with navbar */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 40px;
+    max-width: 1500px;
+    width: 100%;
+    margin-top: 20px; /* Add margin for separation */
+
+    margin: 0 auto; /* Centers content horizontally */
+}
+
+.left-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    flex-direction: column;
+    padding-right: 100px;
+}
+
+.left-section h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.right-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+
+}
+
+.right-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-section form input,
+.right-section form select {
+    margin-bottom: 0px;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+.right-section form input:focus,
+.right-section form select:focus {
+    border-color: #000;
+}
+
+.right-section form button {
+    
+    padding: 15px;
+    background-color: #0057ff;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background and transform */
+}
+
+.right-section form button:hover {
+        background-color: #0041cc; /* Darker shade for hover effect */
+        transform: translateY(-2px); /* Slightly raise the button */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    }
+
+/* Cards Section */
+.cards-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    margin: 50px 0;
+    width: 80%;
+    margin-top: 40px; /* Space above the cards section */
+padding: 0 20px; /* Add padding for better spacing on mobile */
+}
+
+
+/* Responsive Select Box */
+.right-section form select {
+-webkit-appearance: none; /* Remove default styling */
+-moz-appearance: none;
+appearance: none;
+background-color: #fff; /* Set background color */
+padding: 15px; /* Maintain padding */
+border: 1px solid #ddd; /* Maintain border styling */
+border-radius: 5px; /* Maintain border radius */
+transition: border-color 0.3s; /* Maintain transition */
+}
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Why Join Our Team Section */
+.why-join {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.why-join h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #000;
+}
+
+.why-join p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.why-join ul {
+    text-align: left;
+    margin-top: 20px;
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #666;
+}
+
+/* Certifications & Awards Section */
+.certifications {
+    background-color: #f4f4f4;
+    padding: 40px;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.certifications h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #000;
+}
+
+.certifications p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.certifications img {
+    width: 100px;
+    margin: 20px;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    width: 100%;
+    border-top: 1px solid #eaeaea;
+    flex-direction: column;
+}
+.error {
+    color: #b74134; /* Error message color */
+    font-size: 0.9em; /* Slightly smaller text */
+    margin-top: 2px; /* Space between input and error message */
+    min-height: 15px; /* Set a fixed height to prevent layout shift */
+    visibility: hidden; /* Initially hide the error message */
+}
+
+.input-error {
+    border: 1px solid #b74134 !important; /* Border color for input with error */
+}
+
+/* Show the error message when there's an error */
+.error.visible {
+    visibility: visible; /* Change to visible when there's an error */
+}
+
+.footer i {
+    margin: 0 15px;
+    font-size: 24px;
+    color: #333;
+}
+.jobDetails {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center align items vertically */
+    padding: 10px 0; /* Add vertical padding */
+    font-size: 16px; /* Set font size */
+    color: #333; /* Darker text color for better readability */
+    border-bottom: 1px solid #e0e0e0; /* Subtle bottom border for separation */
+}
+
+.jobDetails span {
+    margin-left: 10px; /* Space between icon and text */
+    flex-grow: 1; /* Allow text to grow and fill available space */
+}
+
+.jobDetails i {
+    font-size: 20px; /* Icon size */
+    color: #0057ff; /* Icon color */
+    min-width: 25px; /* Ensure some space for the icon */
+}
+
+.buttonApply {
+    padding: 15px;
+    width: 100%;
+    background-color: #0057ff; /* Base background color */
+    color: white; /* Text color */
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background and transform */
+}
+
+.buttonApply:hover {
+    background-color: #0041cc; /* Darker shade for hover effect */
+    transform: translateY(-2px); /* Slightly raise the button */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+.cnFB {
+    padding: 15px;
+    width: 100%;
+    background-color: #0057ff; /* Base background color */
+    color: white; /* Text color */
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background and transform */
+}
+
+.cnFB:hover {
+    background-color: #0041cc; /* Darker shade for hover effect */
+    transform: translateY(-2px); /* Slightly raise the button */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+/* Add this to your CSS file */
+.overflow-hidden {
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        padding: 20px;
+        margin-top: 150px;
+        margin-bottom: 100px;
+
+    }
+
+    .right-section, .left-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .left-section{
+        padding-right:20px;
+    }
+    .hiddenonMob{
+        display: none !important;
+    }
+    .navbar {
+        padding: 10px;
+        max-height: 80px;
+        margin-bottom: 100px;
+    }
+    .navbar ul li a {
+        font-size: 0.9rem;
+    }
+
+    .cards-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .why-join{
+        width: 80%;
+        margin-top: 200px;
+}
+.modal-content {
+    width: 90% !important;
+}
+}
+
+
+/* Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.3s ease; /* Transition for opacity */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #ffffff; /* White background for the modal */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 600px; /* Width of the modal */
+    height: 335px;
+    text-align: center; /* Centered text */
+    opacity: 0; /* Start invisible */
+    transform: translateY(-20px); /* Initial position for the animation */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for opacity and transform */
+}
+
+/* Show the modal */
+.modal.show {
+    display: block; /* Show the modal */
+    opacity: 1; /* Set opacity to full */
+}
+
+/* Show modal content */
+.modal-content.show {
+    opacity: 1; /* Set opacity to full */
+    transform: translateY(0); /* Move to original position */
+}
+
+/* Close button style */
+.close {
+    color: #aaa; /* Gray color for the close button */
+    float: right; /* Float to the right */
+    font-size: 28px; /* Larger size */
+    font-weight: bold; /* Bold text */
+}
+
+/* Close button hover effect */
+.close:hover,
+.close:focus {
+    color: black; /* Change color on hover */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor */
+}
+
+
+
+/* Modal */
+
+/* POPUP */
+
+:root {
+    /* Default Light Mode Colors */
+    --header-bg-start: #e0e0e0;
+    --header-bg-end: #c1c1c1;
+    --header-text-color: #000;
+    --search-bar-bg: #fff;
+    --search-bar-text: #000;
+    --input-bg: #fff;
+    --input-text: #000;
+    --overflow-color: #ddd; /* Light mode overflow color */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Mode Colors */
+        --header-bg-start: #1f2020;
+        --header-bg-end: #1f2020;
+        --header-text-color: #fff;
+        --search-bar-bg: #282828;
+        --search-bar-text: #ddd;
+        --input-bg: #282828;
+        --input-text: #ddd;
+        --overflow-color: #222; /* Dark mode overflow color */
+    }
+}
+.popup-container {
+    width: 550px;
+    height: 770px;
+    border: 1px solid #aaa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    display: none; /* Initially hidden */
+    border-radius: 4px 4px 0px 0px;
+    background-color: var(--overflow-color); /* Background color for overflow area */
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .popup-container {
+        width: 100%;
+        height: 100%;
+    }
+    .modal-content{
+        height: 400px;
+    }
+}
+.modal {
+    position: fixed;
+    z-index: 1000; /* Ensure this is the z-index of your modal */
+    /* Other modal styles */
+}
+
+.popup-container {
+    position: fixed; /* Or absolute, depending on your layout */
+    z-index: 1100 !important; /* Higher than the modal */
+    /* Other popup styles */
+}
+.popup-tabs {
+    display: flex;
+    background: linear-gradient(to right, var(--header-bg-start), var(--header-bg-end));
+    border-bottom: 1px solid #aaa;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--header-text-color);
+    padding-top: 3px;
+}
+
+.popup-tab {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-right: 10px;
+    cursor: move;
+    font-size: 15px;
+}
+
+.popup-tab i {
+    margin-right: 5px;
+}
+
+.close-tab-button {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--header-text-color);
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 2px;
+}
+
+.close-tab-button:hover {
+    background-color: #ff3b30;
+}
+
+.popup-header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, var(--header-bg-start), var(--header-bg-end));
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+    user-select: text;
+}
+
+.popup-header .nav-buttons {
+    display: flex;
+    padding: 0 10px;
+}
+
+.popup-header .nav-buttons i {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.popup-header .search-bar-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 5px 10px;
+    background-color: var(--search-bar-bg);
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.popup-header .search-bar-container i.ssl-icon {
+    color: var(--search-bar-text);
+    margin-right: 5px;
+}
+
+.popup-header .search-bar-container input {
+    border: none;
+    outline: none;
+    width: 100%;
+    cursor: text;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    user-select: text;
+}
+
+.popup-iframe {
+    flex-grow: 1;
+    border: none;
+    background-color: var(--overflow-color); /* Apply overflow color */
+}
+
+/* Centering the popup */
+#loadingOverlay {
+    text-align:center;
+    margin-top:-200px !important;
+}
+/* Loading GIF */
+.loadingGif {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+/* Loading text */
+.loadingText {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+.smallertext {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+
+/* POPUP */
